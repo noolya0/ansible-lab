@@ -1,0 +1,10 @@
+---
+ - name: Configure Nginx service behavior
+   hosts: clone
+   become: yes
+   tasks:
+      - name: Ensure Nginx is enabled on boot
+        systemd:
+          name: nginx
+          enabled: yes
+          state: started
